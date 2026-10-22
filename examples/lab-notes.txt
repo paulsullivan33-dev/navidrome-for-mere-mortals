@@ -1,0 +1,76 @@
+LAB NOTES — how this guide was verified
+========================================
+
+Machine: a Linux sandbox (amd64). Server under test:
+Navidrome v0.64.2 (10114574), the official linux_amd64
+release tarball, downloaded from the project's GitHub
+releases and SHA-256-verified against the release's own
+navidrome_checksums.txt before first run:
+  fdd87fd107818667c2c50bc24dc6ce856962c795b3822a91f95c066cfad2c53e
+
+The upgrade rehearsal's older build was v0.63.2
+(6b41c703), the previous release line.
+
+FIXTURES (all generated on the bench with ffmpeg; no
+downloaded or commercial audio anywhere):
+
+  music/The Lab Tones/First Frequencies/
+      01-low-rumble.mp3     110 Hz sine, 2.0 s
+      02-middle-c.mp3       262 Hz sine, 2.0 s
+      03-high-ping.mp3      880 Hz sine, 1.5 s
+      tags: artist/album-artist "The Lab Tones",
+      album "First Frequencies", year 2024,
+      genre "Specimen", track numbers 1-3
+  music/Ada Waves/Harbour Lights/
+      01-harbour-light.flac 440 Hz sine + fade, 3.0 s
+      02-evening-tide.flac  330 Hz sine, 2.5 s
+      tags: artist "Ada Waves", album "Harbour Lights",
+      year 2025, genre "Specimen", track numbers 1-2
+  music/Untagged/
+      mystery-tone.mp3      196 Hz sine, tags stripped
+      broken.mp3            33 bytes of plain text:
+                            "This is not an audio file."
+
+METHOD
+  The server was exercised over HTTP through both public
+  interfaces: the native API (/api, /auth) exactly as the
+  web UI uses it, and the Subsonic API (/rest) with real
+  salt+token authentication computed by hand. The web UI
+  itself was fetched and answered (it identifies v0.64.2)
+  but not clicked through; criteria.md records that as a
+  documented-only surface. Passwords used in the lab are
+  redacted in the transcripts.
+
+  Invented users: ruth (first account = admin) and kenji
+  (Kenji Mori, listener). Names, artists, albums and the
+  "Specimen" genre are fictional, per series rule 8.
+
+TRANSCRIPT INDEX (navidrome-lab/transcripts/)
+  t00  pre-setup refusals (Subsonic err 40, API 401, boot log)
+  t01  createAdmin + login
+  t02  library as scanned (artists, albums, songs)
+  t03  Subsonic ping / getUser / search3
+  t04  streaming (FLAC sha256 == file; broken.mp3 streams text)
+  t05  transcoding to Opus ~48 kbps + server log lines
+  t06  playlist created via Subsonic, read via native API
+  t07  second user created and signed in
+  t08  permission fences (403s, error 70, shared library)
+  t09  stars are per-user
+  t10  scanner log, external agent lookups, missing folder
+  t11  backup create/restore rehearsal (incl. the
+       "No existing database" failure and the fix)
+  t12  .m3u auto-import (synced, read-only playlist)
+  t13  upgrade v0.63.2 -> v0.64.2 over one data folder
+  t14  navidrome user list against the live server
+
+SURPRISES WORTH THE INK
+  * The scanner catalogues broken.mp3 (text!) as a track,
+    and the streamer returns its bytes with HTTP 200.
+  * backup restore refuses an empty data folder:
+    "No existing database". Boot once first, then restore.
+  * createAdmin is its own endpoint; the user API will not
+    create the first user (401 before any user exists).
+  * Transcoding defaults to Opus (DefaultDownsamplingFormat).
+  * getUser reports playlistRole=false for the admin while
+    playlist creation works fine. Protocol archaeology;
+    harmless, noted so nobody else chases it.

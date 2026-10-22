@@ -1,0 +1,53 @@
+NAVIDROME — COMMAND CHEAT SHEET
+(companion to the guide; every command below was run by the lab
+unless marked [docs] — see navidrome-lab/transcripts/)
+
+RUNNING
+  ./navidrome                       start with ./navidrome.toml
+  ./navidrome -c /path/navidrome.toml
+  ./navidrome --version             prints e.g. 0.64.2 (10114574)
+  navidrome service install         register the systemd service [docs]
+
+VERIFY THE DOWNLOAD
+  sha256sum navidrome_<ver>_linux_amd64.tar.gz
+      compare with navidrome_checksums.txt from the same release
+
+FIRST USER (only works while no users exist)
+  In the browser: the welcome screen, or by hand:
+  curl -X POST localhost:4533/auth/createAdmin \
+       -H 'Content-Type: application/json' \
+       -d '{"username":"you","password":"a-real-password"}'
+
+SCAN
+  navidrome scan --full             re-read every file
+  (normally unnecessary: the watcher notices changes in seconds)
+
+ASK THE SERVER WHAT IT HAS (native API)
+  TOKEN from POST /auth/login {"username":..,"password":..}
+  curl localhost:4533/api/album?_sort=title -H "X-ND-Authorization: Bearer $TOKEN"
+  curl localhost:4533/api/song?_sort=title  -H "X-ND-Authorization: Bearer $TOKEN"
+
+SUBSONIC BY HAND (salt + token auth)
+  SALT=$(openssl rand -hex 6)
+  TOK=$(printf '%s' "password$SALT" | md5sum | cut -d' ' -f1)
+  curl "localhost:4533/rest/ping?u=you&t=$TOK&s=$SALT&v=1.16.1&c=hand&f=json"
+  curl "localhost:4533/rest/search3?query=tone&u=you&t=$TOK&s=$SALT&v=1.16.1&c=hand&f=json"
+  curl "localhost:4533/rest/stream?id=<songId>&u=you&t=$TOK&s=$SALT&v=1.16.1&c=hand" -o out.flac
+  ...same URL with &maxBitRate=48  -> transcoded stream (Opus by default)
+
+USERS FROM THE COMMAND LINE
+  navidrome user list -c navidrome.toml     (works while serving)
+  navidrome user edit / create / delete ... [docs for rescue use]
+
+BACKUP AND RESTORE (chapter: Backing Up)
+  navidrome backup create  -c navidrome.toml --backup-dir ./backups
+  navidrome backup list    -c navidrome.toml --backup-dir ./backups
+  navidrome backup prune   -c navidrome.toml --backup-dir ./backups --keep-count 4
+  navidrome backup restore -c navidrome.toml --backup-file <file> --force
+      offline only; the target data folder must already contain a
+      database (boot the new instance once first), see t11
+
+HEALTH AND FORENSICS
+  navidrome doctor -c navidrome.toml    database integrity checks
+  ffprobe some-file.flac                what a file really is
+  ND_LOGLEVEL=debug ./navidrome         verbose log while hunting

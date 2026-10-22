@@ -1,0 +1,13 @@
+$ ./upgradelab/navidrome --version   (the old binary, run first with a fresh data folder)
+0.63.2 (be10f89c)
+$ curl -X POST http://localhost:4536/auth/createAdmin {"username":"ruth", ...}   (admin created under 0.63.2)
+{"id":"0mzFuwQNZO4N5fW14KMWhl","isAdmin":true,"name":"Ruth", ...}
+$ (stop the old binary; start the 0.64.2 binary with the same config and data folder)
+time="2026-10-22T23:44:08Z" level=info msg="goose: successfully migrated database to version: 20260922230428"
+time="2026-10-22T23:44:08Z" level=info msg="----> Navidrome server is ready!" address="0.0.0.0:4536" startupTime=542.3ms tlsEnabled=false
+$ curl -s "http://localhost:4536/rest/ping.view?...(as ruth, password unchanged)"
+{"subsonic-response":{"status":"ok","version":"1.16.1","type":"navidrome","serverVersion":"0.64.2 (10114574)","openSubsonic":true}}
+$ curl -s "http://localhost:4536/rest/search3.view?...&query=Static"   (library intact after the swap)
+serverVersion: 0.64.2 (10114574)
+found: Evening Static by Ada Waves
+found: Morning Static by Ada Waves

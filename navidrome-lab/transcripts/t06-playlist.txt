@@ -1,0 +1,240 @@
+$ curl -s "http://localhost:4533/rest/createPlaylist.view?...&name=Evening%20Specimens&songId=5tUan4YNZnnhVzAvIq3CRF&songId=6BZQYrdFQX5emze9k1ELf9&songId=6hb0OX2gKugYvBXCFTAgLO"
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.64.2 (10114574)",
+        "openSubsonic": true,
+        "playlist": {
+            "id": "61hrBIC4F4PdY8qRIL2pOE",
+            "name": "Evening Specimens",
+            "songCount": 3,
+            "duration": 22,
+            "owner": "ruth",
+            "created": "2026-10-22T23:41:15.870700386Z",
+            "changed": "2026-10-22T23:41:15.880976056Z",
+            "coverArt": "pl-61hrBIC4F4PdY8qRIL2pOE",
+            "readonly": false,
+            "entry": [
+                {
+                    "id": "5tUan4YNZnnhVzAvIq3CRF",
+                    "parent": "4fTXvWVZyTPTZaEnn2FrL7",
+                    "isDir": false,
+                    "title": "Morning Static",
+                    "album": "Harbour Lights",
+                    "artist": "Ada Waves",
+                    "track": 1,
+                    "year": 2025,
+                    "genre": "Specimen",
+                    "size": 101886,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 8,
+                    "bitRate": 93,
+                    "path": "Ada Waves/Harbour Lights/01 - Morning Static.flac",
+                    "created": "2026-10-22T23:39:31.184226547Z",
+                    "albumId": "4fTXvWVZyTPTZaEnn2FrL7",
+                    "artistId": "2wjJ8odtoEStbBZr7HUI71",
+                    "type": "music",
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "morning static",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "isrc": [],
+                    "genres": [
+                        {
+                            "name": "Specimen"
+                        }
+                    ],
+                    "replayGain": {},
+                    "channelCount": 1,
+                    "samplingRate": 44100,
+                    "bitDepth": 16,
+                    "moods": [],
+                    "artists": [
+                        {
+                            "id": "2wjJ8odtoEStbBZr7HUI71",
+                            "name": "Ada Waves"
+                        }
+                    ],
+                    "displayArtist": "Ada Waves",
+                    "albumArtists": [
+                        {
+                            "id": "2wjJ8odtoEStbBZr7HUI71",
+                            "name": "Ada Waves"
+                        }
+                    ],
+                    "displayAlbumArtist": "Ada Waves",
+                    "contributors": [],
+                    "displayComposer": "",
+                    "explicitStatus": "",
+                    "groupings": [],
+                    "works": [],
+                    "movements": []
+                },
+                {
+                    "id": "6BZQYrdFQX5emze9k1ELf9",
+                    "parent": "4fTXvWVZyTPTZaEnn2FrL7",
+                    "isDir": false,
+                    "title": "Evening Static",
+                    "album": "Harbour Lights",
+                    "artist": "Ada Waves",
+                    "track": 2,
+                    "year": 2025,
+                    "genre": "Specimen",
+                    "size": 104288,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 8,
+                    "bitRate": 96,
+                    "path": "Ada Waves/Harbour Lights/02 - Evening Static.flac",
+                    "created": "2026-10-22T23:39:31.191667794Z",
+                    "albumId": "4fTXvWVZyTPTZaEnn2FrL7",
+                    "artistId": "2wjJ8odtoEStbBZr7HUI71",
+                    "type": "music",
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "evening static",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "isrc": [],
+                    "genres": [
+                        {
+                            "name": "Specimen"
+                        }
+                    ],
+                    "replayGain": {},
+                    "channelCount": 1,
+                    "samplingRate": 44100,
+                    "bitDepth": 16,
+                    "moods": [],
+                    "artists": [
+                        {
+                            "id": "2wjJ8odtoEStbBZr7HUI71",
+                            "name": "Ada Waves"
+                        }
+                    ],
+                    "displayArtist": "Ada Waves",
+                    "albumArtists": [
+                        {
+                            "id": "2wjJ8odtoEStbBZr7HUI71",
+                            "name": "Ada Waves"
+                        }
+                    ],
+                    "displayAlbumArtist": "Ada Waves",
+                    "contributors": [],
+                    "displayComposer": "",
+                    "explicitStatus": "",
+                    "groupings": [],
+                    "works": [],
+                    "movements": []
+                },
+                {
+                    "id": "6hb0OX2gKugYvBXCFTAgLO",
+                    "parent": "705eHViGAaeUe1RIGyKgwu",
+                    "isDir": false,
+                    "title": "Low Hum",
+                    "album": "First Frequencies",
+                    "artist": "The Lab Tones",
+                    "track": 1,
+                    "year": 2024,
+                    "genre": "Specimen",
+                    "size": 25000,
+                    "contentType": "audio/mpeg",
+                    "suffix": "mp3",
+                    "duration": 6,
+                    "bitRate": 33,
+                    "path": "The Lab Tones/First Frequencies/01 - Low Hum.mp3",
+                    "created": "2026-10-22T23:39:31.346721845Z",
+                    "albumId": "705eHViGAaeUe1RIGyKgwu",
+                    "artistId": "1aFE4x3s5YsknYm0zhbYrJ",
+                    "type": "music",
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "low hum",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "isrc": [],
+                    "genres": [
+                        {
+                            "name": "Specimen"
+                        }
+                    ],
+                    "replayGain": {},
+                    "channelCount": 1,
+                    "samplingRate": 44100,
+                    "bitDepth": 0,
+                    "moods": [],
+                    "artists": [
+                        {
+                            "id": "1aFE4x3s5YsknYm0zhbYrJ",
+                            "name": "The Lab Tones"
+                        }
+                    ],
+                    "displayArtist": "The Lab Tones",
+                    "albumArtists": [
+                        {
+                            "id": "1aFE4x3s5YsknYm0zhbYrJ",
+                            "name": "The Lab Tones"
+                        }
+                    ],
+                    "displayAlbumArtist": "The Lab Tones",
+                    "contributors": [],
+                    "displayComposer": "",
+                    "explicitStatus": "",
+                    "groupings": [],
+                    "works": [],
+                    "movements": []
+                }
+            ]
+        }
+    }
+}
+$ curl -s "http://localhost:4533/rest/getPlaylists.view?..."
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.64.2 (10114574)",
+        "openSubsonic": true,
+        "playlists": {
+            "playlist": [
+                {
+                    "id": "61hrBIC4F4PdY8qRIL2pOE",
+                    "name": "Evening Specimens",
+                    "songCount": 3,
+                    "duration": 22,
+                    "owner": "ruth",
+                    "created": "2026-10-22T23:41:15.870700386Z",
+                    "changed": "2026-10-22T23:41:15.880976056Z",
+                    "coverArt": "pl-61hrBIC4F4PdY8qRIL2pOE",
+                    "readonly": false
+                }
+            ]
+        }
+    }
+}
+$ curl -s http://localhost:4533/api/playlist -H "X-ND-Authorization: Bearer <token>"   (the web UI's own API sees the same playlist)
+[
+    {
+        "id": "61hrBIC4F4PdY8qRIL2pOE",
+        "name": "Evening Specimens",
+        "comment": "",
+        "duration": 22.03,
+        "size": 231174,
+        "songCount": 3,
+        "ownerName": "ruth",
+        "ownerId": "4udrQ1a0uu20u4C9dWAZlo",
+        "public": false,
+        "path": "",
+        "sync": false,
+        "uploadedImage": "",
+        "createdAt": "2026-10-22T23:41:15.870700386Z",
+        "updatedAt": "2026-10-22T23:41:15.880976056Z",
+        "rules": null,
+        "evaluatedAt": null
+    }
+]

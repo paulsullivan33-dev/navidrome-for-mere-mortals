@@ -1,0 +1,276 @@
+$ curl -s http://localhost:4533/api/artist -H "X-ND-Authorization: Bearer <token>"
+[
+    {
+        "imageAbsent": true,
+        "id": "1aFE4x3s5YsknYm0zhbYrJ",
+        "name": "The Lab Tones",
+        "orderArtistName": "lab tones",
+        "stats": {
+            "albumartist": {
+                "songCount": 3,
+                "albumCount": 1,
+                "size": 75084
+            },
+            "artist": {
+                "songCount": 3,
+                "albumCount": 1,
+                "size": 75084
+            },
+            "maincredit": {
+                "songCount": 3,
+                "albumCount": 1,
+                "size": 150168
+            }
+        },
+        "size": 150168,
+        "albumCount": 1,
+        "songCount": 3,
+        "missing": false,
+        "createdAt": "2026-10-22T23:39:31.326107879Z",
+        "updatedAt": "2026-10-22T23:39:31.326107879Z"
+    },
+    {
+        "imageAbsent": true,
+        "id": "2wjJ8odtoEStbBZr7HUI71",
+        "name": "Ada Waves",
+        "orderArtistName": "ada waves",
+        "stats": {
+            "albumartist": {
+                "songCount": 2,
+                "albumCount": 1,
+                "size": 206174
+            },
+            "artist": {
+                "songCount": 2,
+                "albumCount": 1,
+                "size": 206174
+            },
+            "maincredit": {
+                "songCount": 2,
+                "albumCount": 1,
+                "size": 412348
+            }
+        },
+        "size": 412348,
+        "albumCount": 1,
+        "songCount": 2,
+        "missing": false,
+        "createdAt": "2026-10-22T23:39:31.176779081Z",
+        "updatedAt": "2026-10-22T23:39:31.176779081Z"
+    },
+    {
+        "imageAbsent": true,
+        "id": "6QiT23Pg8GAJHZop58uMKH",
+        "name": "[Unknown Artist]",
+        "orderArtistName": "[unknown artist]",
+        "stats": {
+            "albumartist": {
+                "songCount": 2,
+                "albumCount": 1,
+                "size": 20984
+            },
+            "artist": {
+                "songCount": 2,
+                "albumCount": 1,
+                "size": 20984
+            },
+            "maincredit": {
+                "songCount": 2,
+                "albumCount": 1,
+                "size": 41968
+            }
+        },
+        "size": 41968,
+        "albumCount": 1,
+        "songCount": 2,
+        "missing": false,
+        "createdAt": "2026-10-22T23:39:31.197434058Z",
+        "updatedAt": "2026-10-22T23:39:31.197434058Z"
+    }
+]
+$ curl -s http://localhost:4533/api/album -H "X-ND-Authorization: Bearer <token>"
+[
+    {
+        "imageAbsent": true,
+        "id": "4fTXvWVZyTPTZaEnn2FrL7",
+        "libraryId": 1,
+        "libraryPath": "/home/hatch/workspace/navidrome-build/lab/music",
+        "libraryName": "Music Library",
+        "name": "Harbour Lights",
+        "albumArtistId": "2wjJ8odtoEStbBZr7HUI71",
+        "albumArtist": "Ada Waves",
+        "maxYear": 2025,
+        "minYear": 2025,
+        "date": "2025",
+        "maxOriginalYear": 0,
+        "minOriginalYear": 0,
+        "compilation": false,
+        "songCount": 2,
+        "duration": 16,
+        "size": 206174,
+        "discs": {
+            "1": ""
+        },
+        "orderAlbumName": "harbour lights",
+        "orderAlbumArtistName": "ada waves",
+        "explicitStatus": "",
+        "rgAlbumGain": null,
+        "rgAlbumPeak": null,
+        "externalInfoUpdatedAt": null,
+        "genre": "Specimen",
+        "genres": [
+            {
+                "id": "5JnY0p01IQ9BI3Syo4gjuc",
+                "name": "Specimen"
+            }
+        ],
+        "tags": {
+            "genre": [
+                "Specimen"
+            ],
+            "tracktotal": [
+                "2"
+            ]
+        },
+        "participants": {
+            "albumartist": [
+                {
+                    "id": "2wjJ8odtoEStbBZr7HUI71",
+                    "name": "Ada Waves",
+                    "missing": false
+                }
+            ],
+            "artist": [
+                {
+                    "id": "2wjJ8odtoEStbBZr7HUI71",
+                    "name": "Ada Waves",
+                    "missing": false
+                }
+            ]
+        },
+        "missing": false,
+        "importedAt": "2026-10-22T23:39:31.177344579Z",
+        "createdAt": "2026-10-22T23:39:16.074398144Z",
+        "updatedAt": "2026-10-22T23:39:16.078471118Z"
+    },
+    {
+        "imageAbsent": true,
+        "id": "69IwB2p7tQDejD3lowUIFo",
+        "libraryId": 1,
+        "libraryPath": "/home/hatch/workspace/navidrome-build/lab/music",
+        "libraryName": "Music Library",
+        "name": "[Unknown Album]",
+        "albumArtistId": "6QiT23Pg8GAJHZop58uMKH",
+        "albumArtist": "[Unknown Artist]",
+        "maxYear": 0,
+        "minYear": 0,
+        "maxOriginalYear": 0,
+        "minOriginalYear": 0,
+        "compilation": false,
+        "songCount": 2,
+        "duration": 5.04,
+        "size": 20984,
+        "discs": {
+            "1": ""
+        },
+        "orderAlbumName": "[unknown album]",
+        "orderAlbumArtistName": "[unknown artist]",
+        "explicitStatus": "",
+        "rgAlbumGain": null,
+        "rgAlbumPeak": null,
+        "externalInfoUpdatedAt": null,
+        "genre": "",
+        "genres": null,
+        "participants": {
+            "albumartist": [
+                {
+                    "id": "6QiT23Pg8GAJHZop58uMKH",
+                    "name": "[Unknown Artist]",
+                    "missing": false
+                }
+            ],
+            "artist": [
+                {
+                    "id": "6QiT23Pg8GAJHZop58uMKH",
+                    "name": "[Unknown Artist]",
+                    "missing": false
+                }
+            ]
+        },
+        "missing": false,
+        "importedAt": "2026-10-22T23:39:31.197972135Z",
+        "createdAt": "2026-10-22T23:39:16.084398144Z",
+        "updatedAt": "2026-10-22T23:39:16.089057565Z"
+    },
+    {
+        "imageAbsent": true,
+        "id": "705eHViGAaeUe1RIGyKgwu",
+        "libraryId": 1,
+        "libraryPath": "/home/hatch/workspace/navidrome-build/lab/music",
+        "libraryName": "Music Library",
+        "name": "First Frequencies",
+        "albumArtistId": "1aFE4x3s5YsknYm0zhbYrJ",
+        "albumArtist": "The Lab Tones",
+        "maxYear": 2024,
+        "minYear": 2024,
+        "date": "2024",
+        "maxOriginalYear": 0,
+        "minOriginalYear": 0,
+        "compilation": false,
+        "songCount": 3,
+        "duration": 18.09,
+        "size": 75084,
+        "discs": {
+            "1": ""
+        },
+        "orderAlbumName": "first frequencies",
+        "orderAlbumArtistName": "lab tones",
+        "explicitStatus": "",
+        "rgAlbumGain": null,
+        "rgAlbumPeak": null,
+        "externalInfoUpdatedAt": null,
+        "genre": "Specimen",
+        "genres": [
+            {
+                "id": "5JnY0p01IQ9BI3Syo4gjuc",
+                "name": "Specimen"
+            }
+        ],
+        "tags": {
+            "genre": [
+                "Specimen"
+            ],
+            "tracktotal": [
+                "3"
+            ]
+        },
+        "participants": {
+            "albumartist": [
+                {
+                    "id": "1aFE4x3s5YsknYm0zhbYrJ",
+                    "name": "The Lab Tones",
+                    "missing": false
+                }
+            ],
+            "artist": [
+                {
+                    "id": "1aFE4x3s5YsknYm0zhbYrJ",
+                    "name": "The Lab Tones",
+                    "missing": false
+                }
+            ]
+        },
+        "missing": false,
+        "importedAt": "2026-10-22T23:39:31.334051089Z",
+        "createdAt": "2026-10-22T23:39:16.079398144Z",
+        "updatedAt": "2026-10-22T23:39:16.081218561Z"
+    }
+]
+$ curl -s http://localhost:4533/api/song -H "X-ND-Authorization: Bearer <token>"
+'broken'             artist='[Unknown Artist]' album='[Unknown Album]' track=0 format=mp3 bitrate=0 duration=0s id=1v1ca1NSK4J3TCBOskFnzk
+'Evening Static'     artist='Ada Waves' album='Harbour Lights' track=2 format=flac bitrate=96 duration=8s id=6BZQYrdFQX5emze9k1ELf9
+'High Ping'          artist='The Lab Tones' album='First Frequencies' track=3 format=mp3 bitrate=33 duration=6.03s id=43zapo1FAz2vRFpQ4Y8pzm
+'Low Hum'            artist='The Lab Tones' album='First Frequencies' track=1 format=mp3 bitrate=33 duration=6.03s id=6hb0OX2gKugYvBXCFTAgLO
+'Middle Tone'        artist='The Lab Tones' album='First Frequencies' track=2 format=mp3 bitrate=33 duration=6.03s id=343IRzagmszXF6mTpS7kLI
+'Morning Static'     artist='Ada Waves' album='Harbour Lights' track=1 format=flac bitrate=93 duration=8s id=5tUan4YNZnnhVzAvIq3CRF
+'mystery-tone'       artist='[Unknown Artist]' album='[Unknown Album]' track=0 format=mp3 bitrate=33 duration=5.04s id=4kyMqPnLtzU8OPOduCxEyu

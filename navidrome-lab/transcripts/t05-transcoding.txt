@@ -1,0 +1,9 @@
+$ curl -s -D - -o morning-48k.stream "http://localhost:4533/rest/stream.view?...&id=5tUan4YNZnnhVzAvIq3CRF&maxBitRate=48"
+HTTP/1.1 200 OK
+Content-Type: audio/ogg
+X-Content-Type-Options: nosniff
+-rw-rw---- 1 root nogroup 58207 Oct 22 23:41 morning-48k.stream
+$ ffprobe morning-48k.stream
+  Duration: 00:00:08.01, start: 0.000000, bitrate: 58 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp
+(the original is FLAC, 101886 bytes, ~96 kb/s — see t04)

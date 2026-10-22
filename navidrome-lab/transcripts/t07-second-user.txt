@@ -1,0 +1,13 @@
+$ curl -s -X POST http://localhost:4533/api/user -H "X-ND-Authorization: Bearer <admin token>" -d '{"userName":"kenji","name":"Kenji Mori","email":"kenji@example.com","password":"<redacted>","isAdmin":false}'
+{"id":"5GLQFBi5ujA9vv0NVYua6A"}
+HTTP 200
+$ curl -s -X POST http://localhost:4533/auth/login -d '{"username":"kenji","password":"<redacted>"}'
+{
+    "id": "5GLQFBi5ujA9vv0NVYua6A",
+    "isAdmin": false,
+    "name": "Kenji Mori",
+    "subsonicSalt": "<redacted>",
+    "subsonicToken": "<redacted>",
+    "token": "<redacted>",
+    "username": "kenji"
+}

@@ -1,0 +1,44 @@
+$ cat music/imported.m3u  (dropped into the music folder; the watcher picks it up)
+#EXTM3U
+#EXTINF:8,Morning Static - Ada Waves
+Ada Waves/Harbour Lights/01 - Morning Static.flac
+#EXTINF:8,Evening Static - Ada Waves
+Ada Waves/Harbour Lights/02 - Evening Static.flac
+#EXTINF:6,Low Hum - The Lab Tones
+The Lab Tones/First Frequencies/01 - Low Hum.mp3
+$ curl -s "http://localhost:4533/rest/getPlaylists.view?...(as ruth)"
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.64.2 (10114574)",
+        "openSubsonic": true,
+        "playlists": {
+            "playlist": [
+                {
+                    "id": "61hrBIC4F4PdY8qRIL2pOE",
+                    "name": "Evening Specimens",
+                    "songCount": 3,
+                    "duration": 22,
+                    "owner": "ruth",
+                    "created": "2026-10-22T23:41:15.870700386Z",
+                    "changed": "2026-10-22T23:41:15.880976056Z",
+                    "readonly": false
+                },
+                {
+                    "id": "64rWNtywW9tZZLp3uhZc9N",
+                    "name": "imported",
+                    "comment": "Auto-imported from 'imported.m3u'",
+                    "songCount": 3,
+                    "duration": 22,
+                    "owner": "ruth",
+                    "created": "2026-10-22T23:43:21.919226311Z",
+                    "changed": "2026-10-22T23:43:21.930027351Z",
+                    "coverArt": "pl-64rWNtywW9tZZLp3uhZc9N",
+                    "readonly": true
+                }
+            ]
+        }
+    }
+}

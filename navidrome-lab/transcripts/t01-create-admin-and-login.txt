@@ -1,0 +1,21 @@
+$ curl -s -X POST http://localhost:4533/auth/createAdmin -H "Content-Type: application/json" -d '{"username":"ruth","password":"<redacted - invented lab password>"}'
+{
+    "id": "4udrQ1a0uu20u4C9dWAZlo",
+    "isAdmin": true,
+    "name": "Ruth",
+    "subsonicSalt": "<redacted>",
+    "subsonicToken": "<redacted>",
+    "token": "<redacted>",
+    "username": "ruth"
+}
+
+$ curl -s -X POST http://localhost:4533/auth/login -H "Content-Type: application/json" -d '{"username":"ruth","password":"<redacted>"}'
+{
+    "id": "4udrQ1a0uu20u4C9dWAZlo",
+    "isAdmin": true,
+    "name": "Ruth",
+    "subsonicSalt": "<redacted>",
+    "subsonicToken": "<redacted>",
+    "token": "<redacted>",
+    "username": "ruth"
+}

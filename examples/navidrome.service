@@ -1,0 +1,23 @@
+# Example systemd unit for the binary install.
+# Navidrome's own `navidrome service install` manages an
+# equivalent unit for you; this file shows the wiring for
+# readers who prefer to keep it themselves (see the
+# Installing the Binary chapter).
+#
+# Adjust User, paths, and the binary location, then:
+#   sudo cp navidrome.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now navidrome
+
+[Unit]
+Description=Navidrome music server
+After=network.target
+
+[Service]
+User=navidrome
+ExecStart=/usr/local/bin/navidrome -c /home/navidrome/navidrome.toml
+WorkingDirectory=/home/navidrome
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

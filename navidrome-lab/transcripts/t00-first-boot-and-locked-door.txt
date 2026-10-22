@@ -1,0 +1,5 @@
+$ curl -s http://localhost:4533/rest/ping.view?u=nobody&p=wrong&v=1.16.1&c=lab&f=json
+{"subsonic-response":{"status":"failed","version":"1.16.1","type":"navidrome","serverVersion":"0.64.2 (10114574)","openSubsonic":true,"error":{"code":40,"message":"Wrong username or password"}}}
+$ curl -s http://localhost:4533/api/user (unauthenticated, before setup)
+{"error":"Not authenticated"}
+HTTP 401

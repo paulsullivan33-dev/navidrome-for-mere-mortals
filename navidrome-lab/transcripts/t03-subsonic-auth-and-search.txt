@@ -1,0 +1,190 @@
+$ curl -s "http://localhost:4533/rest/ping.view?u=ruth&t=<md5(password+salt)>&s=labsalt42&v=1.16.1&c=transcript&f=json"
+{"subsonic-response":{"status":"ok","version":"1.16.1","type":"navidrome","serverVersion":"0.64.2 (10114574)","openSubsonic":true}}
+$ curl -s "http://localhost:4533/rest/getUser.view?...&username=ruth"
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.64.2 (10114574)",
+        "openSubsonic": true,
+        "user": {
+            "username": "ruth",
+            "scrobblingEnabled": true,
+            "adminRole": true,
+            "settingsRole": false,
+            "downloadRole": true,
+            "uploadRole": false,
+            "playlistRole": false,
+            "coverArtRole": true,
+            "commentRole": false,
+            "podcastRole": false,
+            "streamRole": true,
+            "jukeboxRole": false,
+            "shareRole": true,
+            "videoConversionRole": false,
+            "folder": [
+                1
+            ]
+        }
+    }
+}
+$ curl -s "http://localhost:4533/rest/search3.view?...&query=Static"
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.64.2 (10114574)",
+        "openSubsonic": true,
+        "searchResult3": {
+            "song": [
+                {
+                    "id": "6BZQYrdFQX5emze9k1ELf9",
+                    "parent": "4fTXvWVZyTPTZaEnn2FrL7",
+                    "isDir": false,
+                    "title": "Evening Static",
+                    "album": "Harbour Lights",
+                    "artist": "Ada Waves",
+                    "track": 2,
+                    "year": 2025,
+                    "genre": "Specimen",
+                    "size": 104288,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 8,
+                    "bitRate": 96,
+                    "path": "Ada Waves/Harbour Lights/02 - Evening Static.flac",
+                    "created": "2026-10-22T23:39:31.191667794Z",
+                    "albumId": "4fTXvWVZyTPTZaEnn2FrL7",
+                    "artistId": "2wjJ8odtoEStbBZr7HUI71",
+                    "type": "music",
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "evening static",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "isrc": [],
+                    "genres": [
+                        {
+                            "name": "Specimen"
+                        }
+                    ],
+                    "replayGain": {},
+                    "channelCount": 1,
+                    "samplingRate": 44100,
+                    "bitDepth": 16,
+                    "moods": [],
+                    "artists": [
+                        {
+                            "id": "2wjJ8odtoEStbBZr7HUI71",
+                            "name": "Ada Waves"
+                        }
+                    ],
+                    "displayArtist": "Ada Waves",
+                    "albumArtists": [
+                        {
+                            "id": "2wjJ8odtoEStbBZr7HUI71",
+                            "name": "Ada Waves"
+                        }
+                    ],
+                    "displayAlbumArtist": "Ada Waves",
+                    "contributors": [],
+                    "displayComposer": "",
+                    "explicitStatus": "",
+                    "groupings": [],
+                    "works": [],
+                    "movements": []
+                },
+                {
+                    "id": "5tUan4YNZnnhVzAvIq3CRF",
+                    "parent": "4fTXvWVZyTPTZaEnn2FrL7",
+                    "isDir": false,
+                    "title": "Morning Static",
+                    "album": "Harbour Lights",
+                    "artist": "Ada Waves",
+                    "track": 1,
+                    "year": 2025,
+                    "genre": "Specimen",
+                    "size": 101886,
+                    "contentType": "audio/flac",
+                    "suffix": "flac",
+                    "duration": 8,
+                    "bitRate": 93,
+                    "path": "Ada Waves/Harbour Lights/01 - Morning Static.flac",
+                    "created": "2026-10-22T23:39:31.184226547Z",
+                    "albumId": "4fTXvWVZyTPTZaEnn2FrL7",
+                    "artistId": "2wjJ8odtoEStbBZr7HUI71",
+                    "type": "music",
+                    "bpm": 0,
+                    "comment": "",
+                    "sortName": "morning static",
+                    "mediaType": "song",
+                    "musicBrainzId": "",
+                    "isrc": [],
+                    "genres": [
+                        {
+                            "name": "Specimen"
+                        }
+                    ],
+                    "replayGain": {},
+                    "channelCount": 1,
+                    "samplingRate": 44100,
+                    "bitDepth": 16,
+                    "moods": [],
+                    "artists": [
+                        {
+                            "id": "2wjJ8odtoEStbBZr7HUI71",
+                            "name": "Ada Waves"
+                        }
+                    ],
+                    "displayArtist": "Ada Waves",
+                    "albumArtists": [
+                        {
+                            "id": "2wjJ8odtoEStbBZr7HUI71",
+                            "name": "Ada Waves"
+                        }
+                    ],
+                    "displayAlbumArtist": "Ada Waves",
+                    "contributors": [],
+                    "displayComposer": "",
+                    "explicitStatus": "",
+                    "groupings": [],
+                    "works": [],
+                    "movements": []
+                }
+            ]
+        }
+    }
+}
+$ curl -s "http://localhost:4533/rest/search3.view?...&query=Lab"
+{
+    "subsonic-response": {
+        "status": "ok",
+        "version": "1.16.1",
+        "type": "navidrome",
+        "serverVersion": "0.64.2 (10114574)",
+        "openSubsonic": true,
+        "searchResult3": {
+            "artist": [
+                {
+                    "id": "1aFE4x3s5YsknYm0zhbYrJ",
+                    "name": "The Lab Tones",
+                    "albumCount": 1,
+                    "musicBrainzId": "",
+                    "sortName": "lab tones",
+                    "roles": [
+                        "maincredit",
+                        "albumartist",
+                        "artist"
+                    ]
+                }
+            ],
+            "album": [
+                {
+                    "id": "705eHViGAaeUe1RIGyKgwu",
+                    "name": "First Frequencies",
+                    "artist": "The Lab Tones",
+                    "artistId": "1aFE4x3s5YsknYm0zhbYrJ",
+                    "songCount": 3,
+                    "duration": 18,

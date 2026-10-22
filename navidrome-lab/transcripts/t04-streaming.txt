@@ -1,0 +1,22 @@
+$ curl -s -o morning-static.stream "http://localhost:4533/rest/stream.view?...&id=5tUan4YNZnnhVzAvIq3CRF"   (Morning Static, FLAC)
+HTTP/1.1 200 OK
+Content-Length: 101886
+Content-Type: audio/flac
+X-Content-Type-Options: nosniff
+-rw-rw---- 1 root nogroup 101886 Oct 22 23:40 morning-static.stream
+$ ffprobe morning-static.stream
+  Duration: 00:00:08.00, start: 0.000000, bitrate: 101 kb/s
+  Stream #0:0: Audio: flac, 44100 Hz, mono, s16
+$ sha256sum of the stream vs the file on disk
+47b3687d7ccd7b37c1de07a951bd4d0443281206898f997d83efd5154acfafd7  morning-static.stream
+47b3687d7ccd7b37c1de07a951bd4d0443281206898f997d83efd5154acfafd7  lab/music/Ada Waves/Harbour Lights/01 - Morning Static.flac
+
+$ curl -s ".../rest/stream.view?...&id=6hb0OX2gKugYvBXCFTAgLO"   (Low Hum, MP3)
+  Duration: 00:00:06.00, start: 0.025057, bitrate: 33 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 44100 Hz, mono, fltp, 32 kb/s, start 0.025057
+
+$ curl -s -w "HTTP %{http_code}" ".../rest/stream.view?...&id=1v1ca1NSK4J3TCBOskFnzk"   (the corrupt broken.mp3)
+
+HTTP 200, 33 bytes
+this is not an audio file at all
+

@@ -1,0 +1,20 @@
+--- Kenji (not an admin) tries the admin doors ---
+$ curl -s -w "HTTP %{http_code}" http://localhost:4533/api/user -H "X-ND-Authorization: Bearer <kenji token>"
+{"error":"Error reading user: Permission denied"}
+HTTP 403
+$ curl -s -w "HTTP %{http_code}" -X POST http://localhost:4533/api/user (create another user) -H "X-ND-Authorization: Bearer <kenji token>"
+{"error":"Saving user: Permission denied"}
+HTTP 403
+
+--- Kenji looks for Ruth's playlist ---
+$ curl -s http://localhost:4533/api/playlist -H "X-ND-Authorization: Bearer <kenji token>"
+[]$ curl -s "http://localhost:4533/rest/getPlaylists.view?...(as kenji)"
+{"subsonic-response":{"status":"ok","version":"1.16.1","type":"navidrome","serverVersion":"0.64.2 (10114574)","openSubsonic":true,"playlists":{}}}$ curl -s "http://localhost:4533/rest/getPlaylist.view?...(as kenji)&id=61hrBIC4F4PdY8qRIL2pOE"   (Ruth's private playlist, by id)
+{"subsonic-response":{"status":"failed","version":"1.16.1","type":"navidrome","serverVersion":"0.64.2 (10114574)","openSubsonic":true,"error":{"code":70,"message":"playlist not found"}}}
+--- But the library itself is shared ---
+$ curl -s "http://localhost:4533/rest/search3.view?...(as kenji)&query=Static"
+status: ok
+found: Evening Static by Ada Waves
+found: Morning Static by Ada Waves
+$ curl -s -o /dev/null -w "HTTP %{http_code}, %{size_download} bytes" ".../rest/stream.view?...(as kenji)&id=6hb0OX2gKugYvBXCFTAgLO"
+HTTP 200, 25000 bytes

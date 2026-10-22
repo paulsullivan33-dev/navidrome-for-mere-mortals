@@ -1,0 +1,6 @@
+$ curl -s "http://localhost:4533/rest/star.view?...&id=43zapo1FAz2vRFpQ4Y8pzm"   (Ruth stars High Ping)
+{"subsonic-response":{"status":"ok","version":"1.16.1","type":"navidrome","serverVersion":"0.64.2 (10114574)","openSubsonic":true}}
+$ curl -s "http://localhost:4533/rest/getStarred2.view?..."   (Ruth's starred)
+starred: High Ping by The Lab Tones
+$ curl -s "http://localhost:4533/rest/getStarred2.view?...(as kenji)"   (Kenji's starred — his own, separate)
+{"subsonic-response":{"status":"ok","version":"1.16.1","type":"navidrome","serverVersion":"0.64.2 (10114574)","openSubsonic":true,"starred2":{}}}

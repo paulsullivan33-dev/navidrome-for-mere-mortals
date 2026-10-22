@@ -1,0 +1,25 @@
+$ navidrome backup create -c lab/navidrome.toml --backup-dir ./backups    (server stopped first)
+time="2026-10-22T23:42:19Z" level=info msg="Loaded configuration" file=lab/navidrome.toml
+time="2026-10-22T23:42:19Z" level=info msg="Backup complete" elapsed=85.4ms path=/home/hatch/workspace/navidrome-build/backups/navidrome_backup_2026.10.22_23.42.19.db
+total 712
+drwxrws--- 1 root nogroup     78 Oct 22 23:42 .
+drwxrws--- 1 root nogroup    260 Oct 22 23:42 ..
+-rw-r----- 1 root nogroup 724992 Oct 22 23:42 navidrome_backup_2026.10.22_23.42.19.db
+
+$ navidrome backup restore -c restoredlab/navidrome.toml --backup-file <the backup above> --force    (after a first boot had created a database to restore over)
+Restore complete
+
+--- the restored instance, on port 4534, same music folder, fresh data folder ---
+$ curl -s "http://localhost:4534/rest/ping.view?...(as ruth, her original password)"
+{"subsonic-response":{"status":"ok","version":"1.16.1","type":"navidrome","serverVersion":"0.64.2 (10114574)","openSubsonic":true}}
+$ curl -s "http://localhost:4534/rest/getPlaylists.view?...(as ruth)"
+{"subsonic-response":{"status":"ok","version":"1.16.1","type":"navidrome","serverVersion":"0.64.2 (10114574)","openSubsonic":true,"playlists":{"playlist":[{"id":"61hrBIC4F4PdY8qRIL2pOE","name":"Evening Specimens","songCount":3,"duration":22,"owner":"ruth","created":"2026-10-22T23:41:15.870700386Z","changed":"2026-10-22T23:41:15.880976056Z","readonly":false}]}}}
+$ curl -s "http://localhost:4534/rest/getStarred2.view?...(as ruth)"
+starred: High Ping by The Lab Tones
+$ curl -s "http://localhost:4534/rest/ping.view?...(as kenji, the non-admin user)"
+{"subsonic-response":{"status":"ok","version":"1.16.1","type":"navidrome","serverVersion":"0.64.2 (10114574)","openSubsonic":true}}
+$ curl -s "http://localhost:4534/rest/search3.view?...&query=Tone"
+found: Middle Tone by The Lab Tones
+found: mystery-tone by [Unknown Artist]
+found: High Ping by The Lab Tones
+found: Low Hum by The Lab Tones

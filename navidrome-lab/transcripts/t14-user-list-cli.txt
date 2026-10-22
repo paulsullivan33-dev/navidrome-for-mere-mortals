@@ -1,0 +1,4 @@
+$ ./navidrome user list -c lab/navidrome.toml    (run while the server was up and serving)
+user id,username,user's name,user email,admin,created at,updated at,last access,last login,libraries
+4udrQ1a0uu20u4C9dWAZlo,ruth,Ruth,,true,2026-10-22T23:40:21.352686116Z,2026-10-22T23:40:21.346226422Z,2026-10-22T23:43:25.033431626Z,2026-10-22T23:40:21.553894481Z,'1:/home/hatch/workspace/navidrome-build/lab/music'
+5GLQFBi5ujA9vv0NVYua6A,kenji,Kenji Mori,kenji@example.com,false,2026-10-22T23:41:23.942115732Z,2026-10-22T23:41:23.941700639Z,2026-10-22T23:41:34.240887164Z,2026-10-22T23:41:24.034708607Z,'1:/home/hatch/workspace/navidrome-build/lab/music'

@@ -1,0 +1,14 @@
+Excerpts from the first boot of the lab server (lab/server.log), the scan of the specimen library:
+time="2026-10-22T23:39:31Z" level=warning msg="Playlists will not be imported, as there are no admin users yet. They will be imported automatically once an admin user is created."
+time="2026-10-22T23:39:31Z" level=info msg="Scanner: Finished scanning all libraries" duration=2.39s
+
+The scanner asked an outside service about the invented artists (external metadata agents are on by default):
+time="2026-10-22T23:39:37Z" level=warning msg="Artist not found in deezer" artist="The Lab Tones"
+time="2026-10-22T23:39:38Z" level=warning msg="Artist not found in deezer" artist="Ada Waves"
+time="2026-10-22T23:39:38Z" level=warning msg="Artist not found in deezer" artist="[Unknown Artist]"
+
+A second instance pointed at a music folder that does not exist (badlab/bad.toml).
+It does NOT refuse to start — it starts, serves an empty library, and complains in the log:
+time="2026-10-22T23:41:52Z" level=warning msg="Error resolving path" err="lstat /nonexistent: no such file or directory" path=/nonexistent/no-such-folder
+time="2026-10-22T23:41:52Z" level=error msg="Watcher error" error="getting FS: stat /nonexistent/no-such-folder: no such file or directory: /nonexistent/no-such-folder" libraryID=1 name="Music Library" path=/nonexistent/no-such-folder
+time="2026-10-22T23:41:54Z" level=warning msg="Error resolving path" err="lstat /nonexistent: no such file or directory" path=/nonexistent/no-such-folder

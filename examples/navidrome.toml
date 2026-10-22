@@ -1,0 +1,45 @@
+# Example Navidrome configuration.
+# Copy to the folder you start Navidrome from (or point -c at it),
+# and adjust the two paths. Three lines are a complete install;
+# the rest are commented options this guide discusses.
+# Precedence: environment variables (ND_*) beat command-line
+# flags beat this file. See the Configuration chapter.
+
+MusicFolder = "/home/you/music"
+DataFolder  = "/home/you/navidrome-data"
+Port        = 4533
+
+# --- Privacy (chapter: Configuration) ----------------------------
+# By default Navidrome fetches artist biographies and pictures
+# from Deezer / Last.fm / ListenBrainz and sends anonymous usage
+# statistics to the project. One switch turns all of it off, at
+# the cost of the biographies, pictures, and login-page art.
+# EnableExternalServices = false
+# The statistics collector alone can be stopped with:
+# EnableInsightsCollector = false
+
+# --- Backups (chapter: Backing Up) -------------------------------
+# Automatic database backups are OFF until scheduled here.
+# Backup.Schedule = "0 3 * * 0"    # weekly, Sunday 03:00
+# Backup.Count    = 4
+# Backup.Path     = "/home/you/navidrome-backups"
+
+# --- Playlists (chapter: Playlists, Stars, and Shares) -----------
+# .m3u files in the music folder become synced, read-only
+# playlists. Turn off with:
+# AutoImportPlaylists = false
+
+# --- Sharing (chapter: Playlists, Stars, and Shares) -------------
+# This lab did not exercise public shares. The defaults:
+# EnableSharing = true
+# DefaultShareExpiration = "8760h"   # one year; shorten freely
+
+# --- Listening (chapters: Listening with Apps, Configuration) ----
+# The format a too-big stream is converted to on request.
+# DefaultDownsamplingFormat = "opus"
+# TranscodingCacheSize = "100MB"
+# ImageCacheSize = "100MB"
+
+# --- Diagnostics (chapter: Troubleshooting) ----------------------
+# LogLevel = "debug"   # while you are looking for something;
+                      # "info" is the standing value

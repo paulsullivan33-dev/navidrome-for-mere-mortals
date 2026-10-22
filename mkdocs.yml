@@ -1,0 +1,29 @@
+site_name: Navidrome for Mere Mortals
+site_description: Plain-language self-hosted music streaming with your own library on your own machine. One small program, your folders of songs, listening in the browser and in Subsonic apps, playlists, extra users, backups that restore, and upgrades that swap one file.
+site_url: https://paulsullivan33-dev.github.io/navidrome-for-mere-mortals/
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What Navidrome Is: what-navidrome-is.md
+  - The Shape of It: the-shape-of-it.md
+  - Installing the Binary: installing-the-binary.md
+  - First User and First Scan: first-user-and-first-scan.md
+  - Tags and Folders: tags-and-folders.md
+  - Listening in the Browser: listening-in-the-browser.md
+  - Listening with Apps: listening-with-apps.md
+  - Playlists, Stars, and Shares: playlists-stars-and-shares.md
+  - Users and Permissions: users-and-permissions.md
+  - Configuration: configuration.md
+  - Backing Up: backing-up.md
+  - Upgrading: upgrading.md
+  - Recipes: recipes.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

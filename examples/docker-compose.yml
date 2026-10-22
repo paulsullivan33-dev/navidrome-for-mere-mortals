@@ -1,0 +1,21 @@
+# DOCUMENTED ROUTE — this lab verified the plain binary
+# install, not this file (see criteria.md). The shape follows
+# the project's own published Docker example: the config file
+# lives at /data/navidrome.toml inside the volume, settings can
+# equally be given as ND_* environment variables, and the music
+# folder is a read-only mount.
+#
+#   docker compose up -d
+# then open http://localhost:4533
+
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    restart: unless-stopped
+    ports:
+      - "4533:4533"
+    environment:
+      ND_LOGLEVEL: info
+    volumes:
+      - ./data:/data          # database, cache, navidrome.toml
+      - ./music:/music:ro     # your library, read-only
